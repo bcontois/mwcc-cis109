@@ -39,10 +39,16 @@ while(True):
         print(f"Item Count: {len(grocery_list)}")
 
     elif(selection == "4"):
-        print(f"First Item: {grocery_list[0]}")
+        if len(grocery_list) == 0:
+            print("The shopping list is empty.")
+        else:
+            print(f"First Item: {grocery_list[0]}")
 
     elif(selection == "5"):
-        print(f"Last Item: {grocery_list[-1]}")
+        if len(grocery_list) == 0:
+            print("The shopping list is empty.")
+        else:
+            print(f"Last Item: {grocery_list[-1]}")
 
     elif(selection == "6"):
         grocery_list.clear()
