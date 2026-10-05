@@ -16,18 +16,18 @@ bad_guesses = []
 remaining_guesses = 6
 
 board = list("_" * len(word))
-print(f"Welcome to Hangman!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWord to guess: {board}\n")
+print(f"Welcome to Hangman, Presented to you by Brian Joseph Contois!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWord to guess: {board}\n")
 
 while True:
-    guess = input("Guess a letter: ").lower()
+    guess = input("guess a letter: ").lower()
 
 
     if len(guess) != 1 or not guess.isalpha():
-        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Input. Please enter a single letter.")
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ninvalid input. please enter a single letter.")
         input("Hit [enter] to continue...")
         continue
     if guess in letters_guessed:
-        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou have already guessed that letter. Please try again.")
+        print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou have already guessed that letter. Please try again.\nPreviously guessed: {letters_guessed}")
         input("Hit [enter] to continue...")
         continue
     letters_guessed.append(guess)
@@ -40,9 +40,9 @@ while True:
         bad_guesses.append(guess)
         remaining_guesses -= 1
         if remaining_guesses == 1:
-            print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\nSorry, {guess} is not in the word. You have {remaining_guesses} guess left.")
+            print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSorry, {guess} is not in the word. You have {remaining_guesses} guess left.")
         else:
-            print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\nSorry, {guess} is not in the word. You have {remaining_guesses} guesses left.")
+            print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSorry, {guess} is not in the word. You have {remaining_guesses} guesses left.")
     print(f"Word: {' '.join(board)}")
     print(f"Bad guesses: {', '.join(bad_guesses)}")
     if "_" not in board:
