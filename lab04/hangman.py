@@ -6,7 +6,8 @@
 
 import random
 
-wordlist = ["python", "programming", "computer", "science", "algorithm"]
+wordlist = ["python", "program", "computer", "science", "algorithm", "zebra"]
+
 
 
 
