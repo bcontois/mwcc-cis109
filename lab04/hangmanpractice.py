@@ -25,11 +25,16 @@ while True:
 
 
     if len(guess) != 1 or not guess.isalpha():
-        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ninvalid input. please enter a single letter.")
+        print('''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        invalid input. please enter a single letter.''')
+
         input("\nplease hit [enter] to continue...")
         continue
     if guess in letters_guessed:
-        print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nyou have already guessed that letter. please try again.\nletters previously guessed: {letters_guessed}\n\n")
+        print(f'''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        you have already guessed that letter. please try again.
+        letters previously guessed: {letters_guessed}\n\n''')
+
         input("\nplease hit [enter] to continue...")
         continue
     letters_guessed.append(guess)
