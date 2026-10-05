@@ -22,7 +22,56 @@ print(f"\nthe word to guess is: {board}\n")
 while True:
     guess = input("guess a letter: ").lower()
 
-
+    match remaining_guesses:
+        case 5:
+            print('''
++---+
+|
+|
+|
+|    
+=======''')
+        case 4:
+            print('''
++---+
+|   |
+|
+|
+|   
+=======''')
+        case 3:
+            print('''
++---+
+|   |
+|   0
+|
+|    
+=======''')
+        case 2:
+            print('''
++---+
+|   |
+|   0
+|   |
+|    
+=======''')
+        case 1:
+            print('''
++---+
+|   |
+|   0
+|   |
+|   |
+=======''')
+        case 0:
+            print('''
++---+
+|   |
+|   0
+|   |
+|   |
+=======''')
+             
     if len(guess) != 1 or not guess.isalpha():
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a single letter.")
@@ -45,16 +94,28 @@ while True:
         remaining_guesses -= 1
         if remaining_guesses == 1:
             print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
-            print(f"sorry, {guess} is not in the word. you have {remaining_guesses} guess left.")
+            print(f"sorry, {guess} is not in the word.", end=" ")
+            print(f"you have {remaining_guesses} guess left.")
         else:
             print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
-            print(f"sorry, {guess} is not in the word. you have {remaining_guesses} guesses left.")
+            print(f"sorry, {guess} is not in the word.", end=" ")
+            print(f"you have {remaining_guesses} guesses left.")
 
     print(f"\nWord: {' '.join(board)}")
     print(f"\nBad guesses: {', '.join(bad_guesses)}\n")
+
     if "_" not in board:
-        print(f"Congratulations! ~{word}~ Is Correct! You Win! ^-^")
+        print(f"Congratulations! ~{word}~ Is Correct! You Win! ^-^\n")
         break
     if remaining_guesses == 0:
-        print(f"Boo Hiss! Game Over! The Word Was ~{word}~ >_<")
+        print(f"Boo Hiss! Game Over! The Word Was ~{word}~ >_<\n")
         break
+
+
+
+
+
+
+
+
+
