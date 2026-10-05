@@ -1,51 +1,76 @@
 #Brian J Contois
-#30 September 2026
+#04 October 2026
 #CIS109-G1 Introduction to Programming (Python)
 #Dr M. Cohen
 #hangman.py
 
 import random
 
-wordlist = ["python", "programming", "computer", "science", "algorithm"]
-
-
-
-
-while(len(bad_guesses) <= max_bad_guesses and "_" in(board)):
-    print(f"\nWord: {' '.join(board)}")
-    print(f"Bad guesses: {', '.join(bad_guesses)}")
-    guess = input("Guess a letter: ").lower()
-
-
-word = wordlist[random.randint(0, len(wordlist) - 1)].strip()
-board = list("_" * len(word))
+#variables needed to run the game
+wordlist = ["python", "program", "computer", "science", "algorithm",]
+random_number = random.randint(0, len(wordlist) - 1)
+word = wordlist[random_number].strip()
+letters_guessed = []
 bad_guesses = []
-max_bad_guesses = 6
+remaining_guesses = 6
+board = list("_" * len(word))
 
-while(len(bad_guesses) <= max_bad_guesses and "_" in(board)    
-    print("\nWelcome to Hangman!\n")
-    print(f"
+#greetings!
+print(f"Welcome to Hangman, Presented to You by Brian Joseph Contois!!", end="")
+print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+print(f"\nthe word to guess is: {board}\n")
 
+#main loop of game
+while True:
+    guess = input("guess a letter: ").lower()
 
-#Input Validation
-if len(guess) != 1 or not guess.isalpha():
-        print("\nInvalid input. Please enter a single letter.")
-        input("Hit [enter] to continue...\n")
+#It is getting late, it is now 11:32PM on 04 october 2026. 
+#This is where the ASCII artwork with case commands are supposed to go
+#I cannot get them to work
+#I think the rest of this seems to function
+
+#input validation             
+    if len(guess) != 1 or not guess.isalpha():
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+        print("\ninvalid input. please enter a single letter.")
+        input("\nplease hit [enter] to continue...")
         continue
-        if guess in bad_guesses or guess in board:
-            print("\nYou have already guessed that letter. Please try again.")
-            input("Hit [enter] to continue...\n")
-            continue
 
-    is_found = False
-    for i, letter in enumerate(word, start=0):
-        if letter == guess:
-            board[i] = word[i]
-            is_found = True
-        if not is_found:
-            bad_guesses.append(guess)
-            print(f"\nSorry, {guess} is not in the word.")
-            input("Hit [enter] to continue...\n")
+#tally of all letters guessed
+    if guess in letters_guessed:
+        print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+        print("\nyou have already guessed that letter. please try again.", end="")
+        print(f"\nletters previously guessed: {letters_guessed}\n\n\n")
+        input("\nplease hit [enter] to continue...")
+        continue
+
+#recording of good or bad guess, guesses left
+#progrss statemtents, and updating of the board 
+    letters_guessed.append(guess)
+    if guess in word:
+        for i, letter in enumerate(word, start=0):
+            if letter == guess:
+                board[i] = word[i]
+        print(f"\n\n\n\n\n\n\n\n\n\n\n\n\n\ngood guess! {guess} is in the word!")
+    else:
+        bad_guesses.append(guess)
+        remaining_guesses -= 1
+        if remaining_guesses == 1:
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+            print(f"sorry, {guess} is not in the word.", end=" ")
+            print(f"you have {remaining_guesses} guess left.")
         else:
-            print(f"\nGood guess! {guess} is in the word.")
-            input("Hit [enter] to continue...\n")
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+            print(f"sorry, {guess} is not in the word.", end=" ")
+            print(f"you have {remaining_guesses} guesses left.")
+
+    print(f"\nWord: {' '.join(board)}")
+    print(f"\nBad guesses: {', '.join(bad_guesses)}\n")
+
+#victory conditions met or failed
+    if "_" not in board:
+        print(f"Congratulations! ~{word}~ Is Correct! You Win! ^-^\n")
+        break
+    if remaining_guesses == 0:
+        print(f"Boo Hiss! Game Over! The Word Was ~{word}~ >_<\n")
+        break
