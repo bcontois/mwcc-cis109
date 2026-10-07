@@ -16,7 +16,6 @@ remaining_guesses = 6
 board = list("_" * len(word))
 
 #ASCII Artwork for hangman
-
 artwork = ["""\n\n\n\n\n\n""",
 """
 +---+
@@ -108,7 +107,7 @@ while True:
             print(f"you have {remaining_guesses} guesses left.")
 
 #printing of the current board with correct letters 
-#and letters ofbad guesses
+#and letters of bad guesses
     print(f"\nWord: {' '.join(board)}")
     print(f"\nBad guesses: {', '.join(bad_guesses)}\n\n\n\n\n")
 
