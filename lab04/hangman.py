@@ -1,5 +1,5 @@
 #Brian J Contois
-#04 October 2026
+#07 October 2026
 #CIS109-G1 Introduction to Programming (Python)
 #Dr M. Cohen
 #hangman.py
