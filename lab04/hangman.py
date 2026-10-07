@@ -6,7 +6,7 @@
 
 import random
 
-#variables needed to run the game
+#constants & variables needed to run the game
 wordlist = ["python", "program", "computer", "science", "algorithm",]
 random_number = random.randint(0, len(wordlist) - 1)
 word = wordlist[random_number].strip()
@@ -72,11 +72,6 @@ while True:
 
     guess = input("guess a letter: ").lower()
 
-#It is getting late, it is now 11:32PM on 04 october 2026. 
-#This is where the ASCII artwork with case commands are supposed to go
-#I cannot get them to work
-#I think the rest of this seems to function
-
 #input validation             
     if len(guess) != 1 or not guess.isalpha():
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
@@ -112,10 +107,12 @@ while True:
             print(f"sorry, {guess} is not in the word.", end=" ")
             print(f"you have {remaining_guesses} guesses left.")
 
+#printing of the current board with correct letters 
+#and letters ofbad guesses
     print(f"\nWord: {' '.join(board)}")
     print(f"\nBad guesses: {', '.join(bad_guesses)}\n\n\n\n\n")
 
-#ASCII artwork printout
+#ASCII artwork for hangman gallows printout
     match (remaining_guesses):
         case 0:
             print(artwork[6])
