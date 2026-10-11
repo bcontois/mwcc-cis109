@@ -18,12 +18,13 @@ matrix= [
     row_2
 ]
 print(random_number)
-print("Welcome to Tic Tac Toe!")
+print("Welcome to Tic Tac Toe!\n")
 if random_number == 0:
-    print("X's will go first.")
+    print("X's will go first.\n\n\n\n\n\n")
 else:
-    print("O's will go first.")
+    print("O's will go first.\n\n\n\n\n\n")
 
 print(matrix[0])
 print(matrix[1])
 print(matrix[2])
+print("\n\n\n\n\n\n")
