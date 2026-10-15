@@ -1,0 +1,83 @@
+# Hi Brian,
+
+# Before we talk about code, let's clarify some of your terminology usage...
+
+# The fundamental difference between a list and a tuple is this:
+
+# A list is mutable, meaning its values can be changed after creation.
+# A tuple is immutable, meaning its values cannot be changed after creation.
+
+# The matrix variable is a list of other list objects. This is how we can get Python to give us behavior similar to a 2-D array in other languages like C/C++ and Java*.
+
+# * As an aside... C used to be the first programming language students would learn in traditional 4-year Computer Science programs, because it makes it easier to understand what is actually going on under the hood of other languages like Python (The runtime engine of which is written in Java) and JavaScript (which is written in C++). 🙃
+
+# Another way of looking at it: Since the values stored in the matrix variable can be updated later, it cannot be a tuple.
+# Here, I've broken down the algorithm you need to print the tic-tac-toe squares.
+# # Define a list of rows that each contain a list of column data.
+# matrix = [
+#     ["-", "-", "-"],
+#     ["-", "-", "-"],
+#     ["-", "-", "-"]
+# ]
+
+# # With each iteration of the outer loop, row is set to the next list in the list of rows. ["-", "-", "-"]
+# for row in matrix:
+    
+#     # With each iteration of the inner loop, a two-field tuple (key, value) is returned by enumerate.
+#     # key represents the index of the list of column values.
+#     # Tuple value, First Iteration: (0, "-") <= The first index and corresponding value of the list contained at row[n].
+#     # Tuple value, Second Iteration: (1, "-") <= The second index and corresponding value of the list contained at row[n].
+#     # Tuple value, Third Iteration: (2, "-") <= The third index and corresponding value of the list contained at row[n].
+#     for key, value in enumerate(row):
+
+#         # Prints "-" <
+#         # Note: The end="" option prevents newline from being automatically appended.
+#         print(value, end="")
+
+#         # Only print a "|" after the first and second tic-tac-toe square.
+#         # len(row) should return 3 here.
+#         if key < len(row) - 1:
+#             print("|", end="")
+
+#         # Output for Single Iteration of Inner Loop: - |           <= 2 more iterations to go!
+#         # Output for Single Iteration of Inner Loop: - | - |      <= 1 more iteration to go!
+#         # Output for Single Iteration of Inner Loop: - | - | -    <= No more iterations, because key == len(row) - 1!
+
+#     # A row's three column values have now printed, so print a newline.
+#     print()
+# Without enumerate, you would need two (2) additional lines of code:
+# # Define a list of rows that each contain a list of column data.
+# matrix = [
+#     ["-", "-", "-"],
+#     ["-", "-", "-"],
+#     ["-", "-", "-"]
+# ]
+
+# # With each iteration of the outer loop, row is set to the next list. ["-", "-", "-"]
+# for row in matrix:
+
+#     # We have to keep track of column index, now.
+#     column_index = 0
+#     for data in matrix[row]:
+
+#         # Prints "-" <
+#         # Note: The end="" option prevents newline from being automatically appended.
+#         print(data, end="")
+
+#         # Only print a "|" after the first and second tic-tac-toe square.
+#         # len(row) should return 3 here.
+#         if column_index < len(row) - 1:
+#             print("|", end="")
+
+#         # Output for Single Iteration of Inner Loop: - |           <= 2 more iterations to go!
+#         # Output for Single Iteration of Inner Loop: - | - |      <= 1 more iteration to go!
+#         # Output for Single Iteration of Inner Loop: - | - | -    <= No more iterations, because key == len(row) - 1!
+
+#     # We have to increment the column_index, now.
+#     column_index += 1
+
+#     # A row's three column values have now printed, so print a newline.
+#     print()
+# Alternatively, since a tic-tac-toe block has a known and unchanging number of columns, you could also hard-code the number of columns instead of dynamically calculating how many there are; avoiding both enumerate and column_index variable. Normally, we want to avoid hard-coding values, but this would be one use case where it would be expected, if not perhaps even preferred. One of my goals, however, was to have students practice using enumerate, though.
+
+# Anyway, if you're still experiencing difficulty wrapping your head around it, schedule office hours and I'll be happy to walk through this line-by-line. I hope this explanation was at least somewhat helpful.
