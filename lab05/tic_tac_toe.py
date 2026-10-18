@@ -19,6 +19,8 @@ board = [
     ["g", "h", "i"]
 ]
 
+print("\nWelcome to Tic-Tac-Toe!\n\n\n")
+
 for row_key, row_value in enumerate(board, start = 0):
     #print(f"Row: {row_key}; Value: {row_value}\n", end="")
     for col_key, col_value in enumerate(row_value, start = 0):
@@ -32,45 +34,51 @@ for row_key, row_value in enumerate(board, start = 0):
             if col_key == 2:
                 print(f"\n--|---|--\n", end="")
         elif row_key == 2:
-            print(f" {col_value} ", end="")
+            print(f" {col_value} ", end="") 
 
 while winner == False or draw == False:
 
-    row_choice = input("\n\nSelect a Row(1-3): ")
+    row_choice = input("\n\n\n\nSelect a Row(1-3): ")
 
     if len(row_choice) != 1 or not row_choice.isdigit():
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
-        continue
+        #continue
 
     if int(row_choice) < 1 or int(row_choice) > 3:
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
-        continue
+        #continue
 
-    col_choice = input("\nSelect a Column(1-3): ")
+    col_choice = input("Select a Column(1-3): ")
 
     if len(col_choice) != 1 or not col_choice.isdigit():
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
-        continue
+        #continue
 
     if int(col_choice) < 1 or int(col_choice) > 3:
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
-        continue
+        #continue
    
     for row_key, row_value in enumerate(board, start = 0):
         #print(f"Row: {row_key}; Value: {row_value}\n", end="")
         for col_key, col_value in enumerate(row_value, start = 0):
             #print(f"Column: {col_key}; Value: {col_value}\n", end="")
             if row_key == int(row_choice)-1 and col_key == int(col_choice)-1:
-                board[row_key][col_key] = "-"
-                print(f"{row_key} {col_value}")
+                if board[row_key][col_key] == "-":
+                    print("\n\n\nSpot already taken, try again!\n\n\n")
+                    #continue
+                else:
+                    board[row_key][col_key] = "-"
+                    print("\n\n\nPlayer O's Turn:\n\n\n")
+                #print(f"{row_key} {col_value}")
+                    #continue
 
     for row_key, row_value in enumerate(board, start = 0):
         #print(f"Row: {row_key}; Value: {row_value}\n", end="")
