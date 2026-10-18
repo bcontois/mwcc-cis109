@@ -49,7 +49,7 @@ while winner == False or draw == False:
         print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
         continue
-    
+
     col_choice = input("\nSelect a Column(1-3): ")
 
     if len(col_choice) != 1 or not col_choice.isdigit():
@@ -64,7 +64,7 @@ while winner == False or draw == False:
         input("\nplease hit [enter] to continue...")
         continue
 
-
+    # I need to put the "X" or "O" into the col_value and i dont know how to make this happen here
 
 
 
