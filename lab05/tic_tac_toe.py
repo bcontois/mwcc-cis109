@@ -10,7 +10,7 @@ random_number = (random.randint(1, 20)) % 2
 
 winner = False
 draw = False
-
+turn = 1
 players = ["X","O"]
 
 board = [
@@ -36,7 +36,7 @@ for row_key, row_value in enumerate(board, start = 0):
         elif row_key == 2:
             print(f" {col_value} ", end="") 
 
-while winner == False or draw == False:
+while winner == False and draw == False:
 
     row_choice = input("\n\n\n\nSelect a Row(1-3): ")
 
@@ -65,7 +65,7 @@ while winner == False or draw == False:
         print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
         #continue
-   
+
     for row_key, row_value in enumerate(board, start = 0):
         #print(f"Row: {row_key}; Value: {row_value}\n", end="")
         for col_key, col_value in enumerate(row_value, start = 0):
@@ -77,6 +77,11 @@ while winner == False or draw == False:
                 else:
                     board[row_key][col_key] = "-"
                     print("\n\n\nPlayer O's Turn:\n\n\n")
+                    turn += 1
+                    print(f"{turn}")
+                    if int(turn) == 10:
+                        print("\n\n\n\nGame ends in a draw!\n\n\n")
+                        draw = True
                 #print(f"{row_key} {col_value}")
                     #continue
 
@@ -94,6 +99,8 @@ while winner == False or draw == False:
                     print(f"\n--|---|--\n", end="")
             elif row_key == 2:
                 print(f" {col_value} ", end="")
+
+print("\n\nGame Over!\n\n")
 
     # I am able to print board and take over a letter with a dash 
     # in an endless looping. this is improving but not quite done
