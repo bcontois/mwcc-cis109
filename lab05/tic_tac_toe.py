@@ -64,6 +64,22 @@ while winner == False or draw == False:
         input("\nplease hit [enter] to continue...")
         continue
 
+   
+   
+    # for row_key, row_value in enumerate(board, start = 0):
+    #     #print(f"Row: {row_key}; Value: {row_value}\n", end="")
+    #     for col_key, col_value in enumerate(row_value, start = 0):
+    #         #print(f"Column: {col_key}; Value: {col_value}\n", end="")
+    #         if row_key == row_choice:
+
+    #             print(f"{row_key} {col_value}")
+
+
+
+    # for r_index, r_value in enumerate(board, start = 0):
+    #     for c_index, c_value in enumerate(r_value, start = 0):
+    #         if c_value == "-":
+
 
 # GUESS = "t"
 # for idx, letter in enumerate(word):
