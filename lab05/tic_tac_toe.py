@@ -14,9 +14,9 @@ draw = False
 players = ["X","O"]
 
 board = [
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-    ["-", "-", "-"]
+    ["a", "b", "c"],
+    ["d", "e", "f"],
+    ["g", "h", "i"]
 ]
 
 for row_key, row_value in enumerate(board, start = 0):
