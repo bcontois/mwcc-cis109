@@ -35,7 +35,7 @@ for row_key, row_value in enumerate(board, start = 0):
             print(f" {col_value} ", end="")
 
 while winner == False or draw == False:
-    
+
     row_choice = input("\n\nSelect a Row(1-3): ")
 
     if len(row_choice) != 1 or not row_choice.isdigit():
@@ -64,6 +64,21 @@ while winner == False or draw == False:
         input("\nplease hit [enter] to continue...")
         continue
 
+
+# GUESS = "t"
+# for idx, letter in enumerate(word):
+#     # With each iteratation of the loop...
+#     # enumerate == RETURNS (KEY, VALUE) ==> (0, "p")
+#     # developer ASSIGNS THESE VARIABLES (idx, letter) = (0, "p")
+#     print(f"Index: {idx}; Letter: {letter}")
+#     if letter == GUESS:
+#         print(f"MATCH FOUND AT Index: {idx}; Letter: {letter}")
+#         board[idx] = word[idx]
+# print(board)
+
+
+   
+    
     # I need to put the "X" or "O" into the col_value and i dont know how to make this happen here
 
 
