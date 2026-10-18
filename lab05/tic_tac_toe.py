@@ -44,7 +44,7 @@ while winner == False or draw == False:
         input("\nplease hit [enter] to continue...")
         continue
 
-    if row_choice < 1 or row_choice > 3:
+    if int(row_choice) < 1 or int(row_choice) > 3:
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
@@ -58,7 +58,7 @@ while winner == False or draw == False:
         input("\nplease hit [enter] to continue...")
         continue
 
-    if col_choice < 1 or col_choice > 3:
+    if int(col_choice) < 1 or int(col_choice) > 3:
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
