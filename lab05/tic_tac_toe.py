@@ -14,26 +14,28 @@ draw = False
 players = ["X","O"]
 
 board = [
-    ["a", "b", "c"],
-    ["d", "e", "f"],
-    ["g", "h", "i"]
+    ["-", "-", "-"],
+    ["-", "-", "-"],
+    ["-", "-", "-"]
 ]
 
-for row, row_value in enumerate(board, start = 0):
-#   print(f"Row: {row}; Value: {row_value}\n", end="")
-    for col, col_value in enumerate(row_value, start =0):
-#       print(f"Column: {col}; Value: {col_value}\n", end="")
-        if row == 0:
+for row_key, row_value in enumerate(board, start = 0):
+    #print(f"Row: {row_key}; Value: {row_value}\n", end="")
+    for col_key, col_value in enumerate(row_value, start = 0):
+        #print(f"Column: {col_key}; Value: {col_value}\n", end="")
+        if row_key == 0:
             print(f" {col_value} ", end="")
-            if col == 2:
-                print(f"\n--+---+--\n", end="")
-        elif row == 1:
+            if col_key == 2:
+                print(f"\n--|---|--\n", end="")
+        elif row_key == 1:
             print(f" {col_value} ", end="")
-            if col == 2:
-                print(f"\n--+---+--\n", end="")
-        elif row == 2:
+            if col_key == 2:
+                print(f"\n--|---|--\n", end="")
+        elif row_key == 2:
             print(f" {col_value} ", end="")
-        
+
+# row_choice = input("\n\nSelect a Row(1-3): ")
+# col_choice = input("\nSelect a Column(1-3): ")
 
 
 
@@ -41,28 +43,22 @@ for row, row_value in enumerate(board, start = 0):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# print(random_number)
-# print("Welcome to Tic Tac Toe!\n")
-# if random_number == 0:
-#     print("X's will go first.\n\n\n\n\n\n")
-# else:
-#     print("O's will go first.\n\n\n\n\n\n")
-
+# #recording of good or bad guess, guesses left
+# #progrss statemtents, and updating of the board 
+#     letters_guessed.append(guess)
+#     if guess in word:
+#         for i, letter in enumerate(word, start=0):
+#             if letter == guess:
+#                 board[i] = word[i]
+#         print(f"\n\ngood guess! {guess} is in the word!")
+#     else:
+#         bad_guesses.append(guess)
+#         remaining_guesses -= 1
+#         if remaining_guesses == 1:
+#             print("\n\n", end="")
+#             print(f"sorry, {guess} is not in the word.", end=" ")
+#             print(f"you have {remaining_guesses} guess left.")
+#         else:
+#             print("\n\n", end="")
+#             print(f"sorry, {guess} is not in the word.", end=" ")
+#             print(f"you have {remaining_guesses} guesses left.")
