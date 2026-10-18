@@ -34,8 +34,35 @@ for row_key, row_value in enumerate(board, start = 0):
         elif row_key == 2:
             print(f" {col_value} ", end="")
 
-# row_choice = input("\n\nSelect a Row(1-3): ")
-# col_choice = input("\nSelect a Column(1-3): ")
+while winner == False or draw == False:
+    
+    row_choice = input("\n\nSelect a Row(1-3): ")
+
+    if len(row_choice) != 1 or not row_choice.isdigit():
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+        print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
+        input("\nplease hit [enter] to continue...")
+        continue
+
+    if row_choice < 1 or row_choice > 3:
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+        print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
+        input("\nplease hit [enter] to continue...")
+        continue
+    
+    col_choice = input("\nSelect a Column(1-3): ")
+
+    if len(col_choice) != 1 or not col_choice.isdigit():
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+        print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
+        input("\nplease hit [enter] to continue...")
+        continue
+
+    if col_choice < 1 or col_choice > 3:
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
+        print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
+        input("\nplease hit [enter] to continue...")
+        continue
 
 
 
