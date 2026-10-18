@@ -72,4 +72,20 @@ while winner == False or draw == False:
                 board[row_key][col_key] = "-"
                 print(f"{row_key} {col_value}")
 
-    # I need to put the "X" or "O" into the col_value and i dont know how to make this happen here
+    for row_key, row_value in enumerate(board, start = 0):
+        #print(f"Row: {row_key}; Value: {row_value}\n", end="")
+        for col_key, col_value in enumerate(row_value, start = 0):
+            #print(f"Column: {col_key}; Value: {col_value}\n", end="")
+            if row_key == 0:
+                print(f" {col_value} ", end="")
+                if col_key == 2:
+                    print(f"\n--|---|--\n", end="")
+            elif row_key == 1:
+                print(f" {col_value} ", end="")
+                if col_key == 2:
+                    print(f"\n--|---|--\n", end="")
+            elif row_key == 2:
+                print(f" {col_value} ", end="")
+
+    # I am able to print board and take over a letter with a dash 
+    # in an endless looping. this is improving but not quite done
