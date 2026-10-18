@@ -1,5 +1,5 @@
 #Brian J Contois
-#17 October 2026
+#18 October 2026
 #CIS109-G1 Introduction to Programming (Python)
 #Dr M. Cohen
 #tic_tac_toe.py
@@ -46,7 +46,7 @@ while winner == False and draw == False:
         input("\nplease hit [enter] to continue...")
         #continue
 
-    if int(row_choice) < 1 or int(row_choice) > 3:
+    elif int(row_choice) < 1 or int(row_choice) > 3:
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid row.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
@@ -60,7 +60,7 @@ while winner == False and draw == False:
         input("\nplease hit [enter] to continue...")
         #continue
 
-    if int(col_choice) < 1 or int(col_choice) > 3:
+    elif int(col_choice) < 1 or int(col_choice) > 3:
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", end="")
         print("\ninvalid input. please enter a valid column.\n\n\n\n\n\n")
         input("\nplease hit [enter] to continue...")
@@ -70,6 +70,7 @@ while winner == False and draw == False:
         #print(f"Row: {row_key}; Value: {row_value}\n", end="")
         for col_key, col_value in enumerate(row_value, start = 0):
             #print(f"Column: {col_key}; Value: {col_value}\n", end="")
+
             if row_key == int(row_choice)-1 and col_key == int(col_choice)-1:
                 if board[row_key][col_key] == "-":
                     print("\n\n\nSpot already taken, try again!\n\n\n")
@@ -102,5 +103,4 @@ while winner == False and draw == False:
 
 print("\n\nGame Over!\n\n")
 
-    # I am able to print board and take over a letter with a dash 
-    # in an endless looping. this is improving but not quite done
+# 1354 18 october 2026 this is about as far as i could make it
