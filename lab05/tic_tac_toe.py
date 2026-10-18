@@ -69,8 +69,7 @@ while winner == False or draw == False:
         for col_key, col_value in enumerate(row_value, start = 0):
             #print(f"Column: {col_key}; Value: {col_value}\n", end="")
             if row_key == int(row_choice)-1 and col_key == int(col_choice)-1:
-                    print(f"{row_key} {col_value}")
+                board[row_key][col_key] = "-"
+                print(f"{row_key} {col_value}")
 
     # I need to put the "X" or "O" into the col_value and i dont know how to make this happen here
-
- 
