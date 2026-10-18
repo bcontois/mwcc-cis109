@@ -64,15 +64,17 @@ while winner == False or draw == False:
         input("\nplease hit [enter] to continue...")
         continue
 
-   
-   
-    # for row_key, row_value in enumerate(board, start = 0):
-    #     #print(f"Row: {row_key}; Value: {row_value}\n", end="")
-    #     for col_key, col_value in enumerate(row_value, start = 0):
-    #         #print(f"Column: {col_key}; Value: {col_value}\n", end="")
-    #         if row_key == row_choice:
+    
+    
 
-    #             print(f"{row_key} {col_value}")
+   
+    for row_key, row_value in enumerate(board, start = 0):
+        #print(f"Row: {row_key}; Value: {row_value}\n", end="")
+        for col_key, col_value in enumerate(row_value, start = 0):
+            #print(f"Column: {col_key}; Value: {col_value}\n", end="")
+            if row_key == int(row_choice)-1:
+                if col_key == int(col_choice)-1:
+                    print(f"{row_key} {col_value}")
 
 
 
