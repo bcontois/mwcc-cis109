@@ -7,3 +7,12 @@
 # Use argparse to parse command-line arguments.
 # Leverage Test-Driven Development (TDD) techniques.
 # Implement a simple encryption algorithm.
+
+from cryptlib import 
+
+
+def main()
+        parser = argparse.ArgumentParser()
+        
+
+
