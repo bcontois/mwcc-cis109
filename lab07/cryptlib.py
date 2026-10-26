@@ -20,11 +20,13 @@ def encrypt(message, shift):
             encrypted_message += new_character
         else:
             # Preserve non-alphabetic characters
-            encrypted_message += new_character
+            encrypted_message += character
 
-    def decrypt(message, shift):
-        decrypted_message = encrypt(message,-shift)
-        return decrypted_message
+    return encrypted_message
+
+def decrypt(message, shift):
+    decrypted_message = encrypt(message,-shift)
+    return decrypted_message
 
 # Shout Out to John (Alias) for helping me
 

@@ -8,14 +8,13 @@ import argparse
 from cryptlib import encrypt, decrypt
 
 def main():
-    parser = argparse.AugmentParser(description="Caesar Cipher Command-Line Utility")
+    parser = argparse.ArgumentParser()
 
     # Require a message to process
     parser.add_argument ("-e", "--encrypt", action='store_true', required=False, help="Encrypt The Message.")
     parser.add_argument ("-d", "--decrypt", action='store_true', required=False, help="Decrypt The Message.")
     parser.add_argument ("-m", "--message", required=True, help="The message to encrypt/decrypt.")
     parser.add_argument ("-s", "--shift", required=True, help="The Shift Value for the Caesar Cypher.")
-
     args = parser.parse_args()
 
     if args.encrypt and args.decrypt:
@@ -25,7 +24,7 @@ def main():
     if args.encrypt:
         encrypted_message = encrypt(args.message, int(args.shift))
         print(f"Encrypted Message: {encrypted_message}")
-    elif args.encrypt:
+    elif args.decrypt:
         decrypted_message = decrypt(args.message, int(args.shift))
         print(f"Decrypted Message: {decrypted_message}")
 
