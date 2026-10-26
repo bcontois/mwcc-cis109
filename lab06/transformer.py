@@ -60,20 +60,22 @@ def main():
         # Returns the string in all caps
         if args.action == "upper":
             result = transform_upper(stripped_item)
+            print(result)
 
         # Returns the string in all lowercase
         elif args.action == "lower":
             result = transform_lower(stripped_item)
+            print(result)
 
         # Returns the number of words in the string
         elif args.action == "count":
             result = get_word_count(stripped_item)
+            print(result)
 
-        # Returns the string only if it is longer than min_length; otherwise, returns None
+        # Returns the string only if it is longer than min_length; otherwise, returns "None"
         elif args.action == "filter":
             result = filter_short(stripped_item, args.min_length)
-
-        print(result)
+            print(result)
 
 if __name__ == "__main__":
     main()
