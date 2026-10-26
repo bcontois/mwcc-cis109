@@ -23,6 +23,7 @@ def filter_short(text, min_length):
 def main():
     parser = argparse.ArgumentParser(description="Bulk Text Transformer Utility")
 
+    # Action input from Command Line
     parser.add_argument(
         "--action",
         required=True,
@@ -30,16 +31,19 @@ def main():
         help="Transformation Action to Perform - Options Available - upper, lower, count, filter"
     )
 
+    # String input from Command Line
     parser.add_argument(
         "--data",
         required=True,
         help="Comma-separated list of strings to transform"
     )
 
+    # Integer Value for Cutoff Length of CSV String Input from Command Line
     parser.add_argument(
         "--min_length",
         type=int,
         default=5,
+        required=False,
         help="Minimum length for filter action (default: 5)"
     )
 
@@ -49,24 +53,25 @@ def main():
     # Split the Input String into a CSV list
     data_list = args.data.split(',')
 
-    # Process each item in the list
+    # Process Each Item in the List
     for item in data_list:
+        stripped_item = item.strip()
 
         # Returns the string in all caps
         if args.action == "upper":
-            result = transform_upper(item)
+            result = transform_upper(stripped_item)
 
         # Returns the string in all lowercase
         elif args.action == "lower":
-            result = transform_lower(item)
+            result = transform_lower(stripped_item)
 
         # Returns the number of words in the string
         elif args.action == "count":
-            result = get_word_count(item)
+            result = get_word_count(stripped_item)
 
         # Returns the string only if it is longer than min_length; otherwise, returns None
         elif args.action == "filter":
-            result = filter_short(item, args.min_length)
+            result = filter_short(stripped_item, args.min_length)
 
         print(result)
 
