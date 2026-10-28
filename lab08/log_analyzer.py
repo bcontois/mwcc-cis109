@@ -46,10 +46,23 @@
 
 with open ('application.log', 'r') as file:
     content = file.read()
-    print(content)
+    #print(content)
 
-print("got here!")
+#print("got here!")
 
 for line in content.split("\n"):
     timestamp = line[:19]
-    print(timestamp)
+   # print(timestamp)
+
+    #result = line.find('warning')
+    #print(result)
+
+    toks = line.split("|")
+
+    status = toks[1].strip().upper()
+
+   # print(f"status {status}")
+
+    if status.find("WARNING") != -1 or status.find("ERROR") != -1:
+        log_message = " | ".join([timestamp, status, toks[2].strip()]) 
+        print(log_message)
