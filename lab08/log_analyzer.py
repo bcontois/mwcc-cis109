@@ -43,6 +43,7 @@
 
 
 # 9. Use appropriate comments. Include comments explaining the purpose of the major sections of your program.
+errors = 0
 
 with open ('application.log', 'r') as file:
     content = file.read()
@@ -64,5 +65,8 @@ for line in content.split("\n"):
    # print(f"status {status}")
 
     if status.find("WARNING") != -1 or status.find("ERROR") != -1:
+        errors += 1
         log_message = " | ".join([timestamp, status, toks[2].strip()]) 
         print(log_message)
+        
+print(f"\nError count: {errors}")
