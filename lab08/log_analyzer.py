@@ -49,3 +49,7 @@ with open ('application.log', 'r') as file:
     print(content)
 
 print("got here!")
+
+for line in content.split("\n"):
+    timestamp = line[:19]
+    print(timestamp)
