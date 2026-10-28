@@ -10,19 +10,23 @@
 
 
 
-# 2. Extract timestamps using slicing. Extract the timestamp from the beginning of each log entry. Timestamps occupy the first 19 characters of each entry.
+# 2. Extract timestamps using slicing. Extract the timestamp from the beginning of each log entry. 
+# Timestamps occupy the first 19 characters of each entry.
 
 
 
-# 3. Search log entries. Use the in operator and the find() method to search for text within log entries. Your program must use string searching to identify error and warning entries.
+# 3. Search log entries. Use the in operator and the find() method to search for text within log entries. 
+# Your program must use string searching to identify error and warning entries.
 
 
 
-# 4. Standardize severity labels. Use replace() to convert lowercase occurrences of error and warning to uppercase. Your report must consistently use ERROR and WARNING.
+# 4. Standardize severity labels. Use replace() to convert lowercase occurrences of error and warning to uppercase. 
+# Your report must consistently use ERROR and WARNING.
 
 
 
-# 5. Split entries into fields. Use split() with the pipe character (|) to separate each entry into its timestamp, severity, and message. Remove unnecessary whitespace from the resulting fields.
+# 5. Split entries into fields. Use split() with the pipe character (|) to separate each entry into its timestamp, severity, and message. 
+# Remove unnecessary whitespace from the resulting fields.
 
 
 
@@ -39,3 +43,9 @@
 
 
 # 9. Use appropriate comments. Include comments explaining the purpose of the major sections of your program.
+
+with open ('application.log', 'r') as file:
+    content = file.read()
+    print(content)
+
+print("got here!")
