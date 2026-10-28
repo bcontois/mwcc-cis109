@@ -4,18 +4,24 @@
 #Dr M. Cohen
 #transformer.py
 
+# Importing argparse module for command line argument inputs
 import argparse
 
-# Defining Transformation Function Modules 
+# Defining Transformation Function Modules
+# Input text becomes uppercase as an output 
 def transform_upper(text):
     return text.upper()
 
+# Input text becomes lowercase as an output
 def transform_lower(text):
     return text.lower()
 
+# Input text gets a return of how many words are between commas. 
 def get_word_count(text):
     return len(text.split())
 
+# Returns the string only if it is longer than min_length (specified below) 
+# Otherwise, returns "None"
 def filter_short(text, min_length):
     return text if len(text) > min_length else None
 
@@ -23,7 +29,7 @@ def filter_short(text, min_length):
 def main():
     parser = argparse.ArgumentParser(description="Bulk Text Transformer Utility")
 
-    # Action input from Command Line
+    # Input desired action to be performed from Command Line
     parser.add_argument(
         "--action",
         required=True,
@@ -31,14 +37,14 @@ def main():
         help="Transformation Action to Perform - Options Available - upper, lower, count, filter"
     )
 
-    # String input from Command Line
+    # String input from Command Line to have action take upon
     parser.add_argument(
         "--data",
         required=True,
         help="Comma-separated list of strings to transform"
     )
 
-    # Integer Value for Cutoff Length of CSV String Input from Command Line
+    # Integer Value for min_length action on text input from Command Line
     parser.add_argument(
         "--min_length",
         type=int,
@@ -53,11 +59,11 @@ def main():
     # Split the Input String into a CSV list
     data_list = args.data.split(',')
 
-    # Process Each Item in the List
+    # Process Each Item in the List (removing whitespace as well)
     for item in data_list:
         stripped_item = item.strip()
 
-        # Returns the string in all caps
+        # Returns the string in all uppercase
         if args.action == "upper":
             result = transform_upper(stripped_item)
             print(result)
