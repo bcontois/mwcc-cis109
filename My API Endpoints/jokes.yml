@@ -1,0 +1,14 @@
+info:
+  name: jokes
+  type: http
+
+http:
+  method: GET
+  url: https://official-joke-api.appspot.com/random_joke
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

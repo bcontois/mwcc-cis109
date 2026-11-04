@@ -37,11 +37,21 @@ def play_game(deck):
         else:
             player_score = player_score + 10
 
+    while house_score < 17 and player_score <= 21:
+        #House Turn
+        card = deck.pop()
+        if card[0].isdigit():
+            house_score = house_score + int(card[0])
+        else:
+            house_score = house_score + 10
+
         print(ascii_cards.display_cards([card]))
         print(f"Player Score: {player_score}\n")
 
         if player_score < 21:
             response = (input("Would you like to hit? (Y/N): ")).upper()
+
+    
 
 
 
