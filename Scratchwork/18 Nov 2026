@@ -1,0 +1,35 @@
+
+book.py
+class Book:
+
+title
+author
+genre
+state (private)
+borrower (private)
+serial number for book (private)
+
+
+checked in function
+check out function
+__init__ function (constructor of book class)
+
+library.py
+class Library:
+
+list of books by serial number[] (private)
+
+
+add function
+
+
+remove function
+
+
+need a unit test for each class
+
+display book status
+get inventory function
+search function by author
+
+
