@@ -15,7 +15,7 @@ def get_noaa_forecast(url):
     pass
 
 
-# hardcoded lat / long
+# hardcoded lat / long for the get_noaa URLs
 
 # parameter list for request function
 
