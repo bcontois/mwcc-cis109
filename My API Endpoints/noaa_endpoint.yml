@@ -1,0 +1,14 @@
+info:
+  name: noaa_endpoint
+  type: http
+
+http:
+  method: GET
+  url: https://api.weather.gov/points/42.5763523,-71.9952737
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

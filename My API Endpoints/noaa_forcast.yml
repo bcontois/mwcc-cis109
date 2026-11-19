@@ -1,0 +1,14 @@
+info:
+  name: noaa_forcast
+  type: http
+
+http:
+  method: GET
+  url: https://api.weather.gov/gridpoints/BOX/38,105/forecast
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
