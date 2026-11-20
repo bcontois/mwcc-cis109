@@ -1,8 +1,6 @@
 import requests
 import argparse
 
-
-
 def get_coordinates(city):
     url = f"https://nominatim.openstreetmap.org/search"
 
@@ -52,13 +50,17 @@ def get_noaa_forecast(url):
 
 def main():
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="NOAA Weather Bugg")
 
-    # Requires a message to encrypt or decrypt depending on the value of the shift entered.
-    parser.add_argument ("-l", "--encrypt", action='store_true', required=False, help="Encrypt The Message.")
-    parser.add_argument ("-d", "--decrypt", action='store_true', required=False, help="Decrypt The Message.")
-    parser.add_argument ("-w", "--message", required=True, help="The message to encrypt/decrypt.")
-    parser.add_argument ("-a", "--shift", required=True, help="The Shift Offest Value for the Caesar Cypher.")
+    # Command Line Arguments for NOAA Weather Forecast Data
+    parser.add_argument (
+        "-l", "--location", action='store_true', required=True, help="MUST accept a 'City, State' string as a command-line option")
+    parser.add_argument (
+        "-d", "--detailed", action='store_true', required=False, help="Returns the current day or night's temperature and detailed")
+    parser.add_argument (
+        "-w", "--week", required=False, help="Returns the short weather forecast for the next week")
+    parser.add_argument (
+        "-a", "--average", required=False, help="Returns the expected average temperature of all the days contained within the weather forecast.")
     args = parser.parse_args()
 
     coordinates = get_coordinates("Millbury, MA")
@@ -75,14 +77,14 @@ def main():
 
     #pass in city name
 
-
 if __name__ == "__main__":
     main()
 
 # 1. The program, weather.py, MUST accept a "City, State" string as a command-line option -l (--location)
 #   command-line option -d (--detailed) that returns the current day or night's temperature and detailed forecast.
 # 6. The program MUST include a command-line option -w (--week) that returns the short weather forecast for the next week.
-# 7.  The program MUST include a command-line option -a (--average) that compiles each period's temperature into a list and uses Python's built-in sum and len functions to calculate and return the expected average temperature of all the days contained within the weather forecast.
+# 7.  The program MUST include a command-line option -a (--average) that compiles each period's temperature into a list and 
+# uses Python's built-in sum and len functions to calculate and return the expected average temperature of all the days contained within the weather forecast.
 # 8. All program output MUST be professionally formatted.
 
 #iterate through forecast that 
