@@ -6,13 +6,21 @@ def main():
     pass
 
 def get_coordinates(city):
-    pass
+    pass   
 
 def get_noaa_endpoint(lat, lon):
-    pass
+    url = "https://api.weather.gov/points/42.5763523,-71.9952737"
+
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        forecastURL = response.json()
+        print(f"ForecastURL: {forecastURL['forecast']}")
+    else:
+        print(f"Failed to retrieve ForecastURL. Status code: {response.status_code}")   
 
 def get_noaa_forecast(url):
-    pass
+    pass  
 
 
 # hardcoded lat / long for the get_noaa URLs
